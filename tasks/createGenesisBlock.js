@@ -10,7 +10,7 @@ var Crypto = require('../helpers/crypto.js');
 var networks = require('../networks.json');
 
 // network name that SHOULD already be preconfigured in ../networks.json
-var network_name = "bitcoin";
+var network_name = "swapblocks";
 if(!networks[network_name]){
   console.log("WARNING: no configuration found in networks.json for '"+network_name+"'. Defaulting to 'devnet'");
   network_name = "devnet";
@@ -49,11 +49,11 @@ var seed_peers = [
 ];
 
 // default db named
-var db_name = "ark_" + network_name;
+var db_name = "swapblocks";
 
 // optional premined accounts. Example :
 // [
-//   {address:"Aoasdk8wehw98eve8fvwr", total:13940327},
+//   {address:"Aoasdk8wehw98eve8fvwr", total:13940327}
 //   {address:"A12lknlkh23902h3n4l2234", total:1000000000}
 // ]
 // total in satoshi
@@ -66,7 +66,7 @@ else {
 }
 
 // Total of premined token in satoshi. The premined accounts will be substracted to this
-var totalpremine = 2100000000000000;
+var totalpremine = 1e+16;
 
 
 // config file that will be tuned and exported
@@ -75,7 +75,7 @@ var config = {
     address: "0.0.0.0",
     version: config_version,
     fileLogLevel: "info",
-    logFileName: "logs/ark.log",
+    logFileName: "logs/swapblocks.log",
     consoleLogLevel: "debug",
     trustProxy: false,
     db: {

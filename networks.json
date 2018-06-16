@@ -53,5 +53,20 @@
       "symbol":"DѦ",
       "explorer":"http://dexplorer.ark.io"
     }
+  },
+	"swapblocks": {
+    "messagePrefix": "swapblocks message:\n",
+    "bip32": {
+      "public": 70617039,
+      "private": 70615956
+    },
+    "pubKeyHash": 75,
+    "wif": 187,
+    "client": {
+      "token": "SBX",
+      "symbol": "SBX",
+      "explorer": "http://localhost:4200"
+    }
   }
+
 }
