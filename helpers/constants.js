@@ -31,8 +31,8 @@ module.exports = {
 	requestLength: 104,
 	rewards: {
 		milestones: [
-			200000000, // Initial Reward
-			200000000, // Milestone 1
+			500000000, // Initial Reward
+			300000000, // Milestone 1
 			200000000, // Milestone 2
 			200000000, // Milestone 3
 			200000000  // Milestone 4
@@ -41,6 +41,6 @@ module.exports = {
 		distance: 3000000, // Distance between each milestone
 	},
 	signatureLength: 196,
-	totalAmount: 12500000000000000,
+	totalAmount: 1e16,
 	unconfirmedTransactionTimeOut: 10800 // 1080 blocks
 };
