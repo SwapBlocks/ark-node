@@ -32,8 +32,8 @@ module.exports = {
 	rewards: {
 		milestones: [
 			500000000, // Initial Reward
-			300000000, // Milestone 1
-			200000000, // Milestone 2
+			400000000, // Milestone 1
+			300000000, // Milestone 2
 			200000000, // Milestone 3
 			200000000  // Milestone 4
 		],

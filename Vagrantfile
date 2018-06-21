@@ -85,7 +85,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
-    v.name = "ark_node_vm"
+    v.name = "swapblocks_node_vm"
   end
 
   # Disable automatic box update checking. If you disable this, then
