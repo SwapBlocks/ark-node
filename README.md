@@ -1,7 +1,9 @@
-![ARK-NODE](https://i.imgur.com/ej8GvMn.png)
-Ark is a next generation crypto-currency and decentralized application platform, written entirely in JavaScript. For more information please refer to our website: https://ark.io/.
+![SWAPBlocks-NODE](https://imgur.com/j0xCRLC)
 
-This version is still beta, use at your own risks
+SWAPBlocks is a decentralized asset management ecos system with decentralized exchange capabilities.
+This initial alpha release is a clone of ARK and will be the backbone of our ecosystem.
+
+This version is still alpha, use at your own risks
 
 ## Install, Upgrade etc...
 You need to provision a linux (ubuntu tested) server (digital ocean, vultur or other).
