@@ -1,7 +1,7 @@
-![SWAPBlocks-NODE](https://imgur.com/j0xCRLC)
+SWAPBlocks is a decentralized asset management ecosystem with decentralized exchange capabilities built on ARK.
+This initial alpha release is a clone of ARK and will be used for community building and fundraising the development
+of SWAPBlocks beta. All transactions on alphnet will carry over to swapblocks beta.
 
-SWAPBlocks is a decentralized asset management ecos system with decentralized exchange capabilities.
-This initial alpha release is a clone of ARK and will be the backbone of our ecosystem.
 
 This version is still alpha, use at your own risks
 
