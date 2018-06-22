@@ -1,4 +1,4 @@
-SWAPBlocks alpha mainnet node.  To learn more about swapblocks visit http://swapblocks.io
+SWAPBlocks alpha testnet node.  To learn more about swapblocks visit http://swapblocks.io
 
 
 This version is still alpha, use at your own risks
