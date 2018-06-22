@@ -1,0 +1,110 @@
+{
+  "port": 4111,
+  "address": "0.0.0.0",
+  "version": "0.0.1",
+  "fileLogLevel": "info",
+  "logFileName": "logs/swapblocks.log",
+  "consoleLogLevel": "debug",
+  "trustProxy": false,
+  "db": {
+    "host": "localhost",
+    "port": 5432,
+    "database": "test_swapblocks",
+    "user": null,
+    "password": "password",
+    "poolSize": 20,
+    "poolIdleTimeout": 30000,
+    "reapIntervalMillis": 1000,
+    "logEvents": [
+      "error"
+    ]
+  },
+  "api": {
+    "mount": true,
+    "access": {
+      "whiteList": []
+    },
+    "options": {
+      "limits": {
+        "max": 0,
+        "delayMs": 0,
+        "delayAfter": 0,
+        "windowMs": 60000
+      }
+    }
+  },
+  "peers": {
+    "minimumNetworkReach": 1,
+    "list": [
+      {
+        "ip": "127.0.0.1",
+        "port": 4100
+      },
+      {
+        "ip": "127.0.0.2",
+        "port": 4100
+      },
+      {
+        "ip": "127.0.0.3",
+        "port": 4100
+      },
+      {
+        "ip": "127.0.0.4",
+        "port": 4100
+      },
+      {
+        "ip": "127.0.0.5",
+        "port": 4100
+      }
+    ],
+    "blackList": [],
+    "options": {
+      "limits": {
+        "max": 0,
+        "delayMs": 0,
+        "delayAfter": 0,
+        "windowMs": 60000
+      },
+      "maxUpdatePeers": 20,
+      "timeout": 5000
+    }
+  },
+  "forging": {
+    "coldstart": 6,
+    "force": true,
+    "secret": {
+      "secret": [
+        "civil diary suffer twist green old gift laptop grant joke nerve orange",
+        "clay absurd welcome lyrics collect kingdom mobile bleak opinion bicycle warrior hawk",
+        "feed elephant then sea seven matter tag quiz arena place endorse swear",
+        "toward bulb pyramid fury exercise decorate extend talent file venture rather special",
+        "opera what van goat already mad sand marriage foot cart cage second",
+        "hover jar blue solid explain spare science universe gospel man balcony orient",
+        "paddle deer air gain stool office hub eyebrow youth illegal burst artwork",
+        "exercise midnight night fish trash notable danger system enlist cloth region depart",
+        "damp oppose reflect sun master bubble purpose quote spice wash unfold stumble",
+        "dad always slight film render bundle room input bulb rabbit write joy"
+      ]
+    },
+    "access": {
+      "whiteList": [
+        "127.0.0.1"
+      ]
+    }
+  },
+  "loading": {
+    "verifyOnLoading": false,
+    "loadPerIteration": 5000
+  },
+  "ssl": {
+    "enabled": false,
+    "options": {
+      "port": 443,
+      "address": "0.0.0.0",
+      "key": "./ssl/ark.key",
+      "cert": "./ssl/ark.crt"
+    }
+  },
+  "network": "testnet",
+  "nethash": "9d39602ff3d69780da2c9f5ed5e24451409f6511e226bd540dd84a375508ce5b"
+}

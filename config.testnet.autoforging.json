@@ -1,0 +1,149 @@
+{
+  "port": 4111,
+  "address": "0.0.0.0",
+  "version": "0.0.1",
+  "fileLogLevel": "info",
+  "logFileName": "logs/swapblocks.log",
+  "consoleLogLevel": "debug",
+  "trustProxy": false,
+  "db": {
+    "host": "localhost",
+    "port": 5432,
+    "database": "test_swapblocks",
+    "user": null,
+    "password": "password",
+    "poolSize": 20,
+    "poolIdleTimeout": 30000,
+    "reapIntervalMillis": 1000,
+    "logEvents": [
+      "error"
+    ]
+  },
+  "api": {
+    "mount": true,
+    "access": {
+      "whiteList": []
+    },
+    "options": {
+      "limits": {
+        "max": 0,
+        "delayMs": 0,
+        "delayAfter": 0,
+        "windowMs": 60000
+      }
+    }
+  },
+  "peers": {
+    "minimumNetworkReach": 1,
+    "list": [
+      {
+        "ip": "127.0.0.1",
+        "port": 4100
+      },
+      {
+        "ip": "127.0.0.2",
+        "port": 4100
+      },
+      {
+        "ip": "127.0.0.3",
+        "port": 4100
+      },
+      {
+        "ip": "127.0.0.4",
+        "port": 4100
+      },
+      {
+        "ip": "127.0.0.5",
+        "port": 4100
+      }
+    ],
+    "blackList": [],
+    "options": {
+      "limits": {
+        "max": 0,
+        "delayMs": 0,
+        "delayAfter": 0,
+        "windowMs": 60000
+      },
+      "maxUpdatePeers": 20,
+      "timeout": 5000
+    }
+  },
+  "forging": {
+    "coldstart": 6,
+    "force": true,
+    "secret": [
+      "alley soldier essay alert tilt rally way claim exile deny evolve organ",
+      "mix canvas entire loyal prevent churn danger city silly leaf flame love",
+      "account hunt split exhaust art expose giant movie usage blast holiday call",
+      "civil diary suffer twist green old gift laptop grant joke nerve orange",
+      "social volcano mushroom donkey before success cereal riot normal much father room",
+      "minimum cotton lecture radar chalk mandate tragic mirror glass renew mad setup",
+      "scout month extend rescue nose carpet scrub cabbage cradle vacant fiction label",
+      "picnic napkin market dice roast waste decide able boy fine ocean sudden",
+      "clay absurd welcome lyrics collect kingdom mobile bleak opinion bicycle warrior hawk",
+      "label whisper search flock puzzle zoo slim panel cover quote replace dawn",
+      "liberty crazy milk solid zone noble where patient skate trophy borrow butter",
+      "orange captain prefer chef word mail place weather forget worry panel patrol",
+      "easy similar runway fancy negative spoil palm evidence settle slide when predict",
+      "feed elephant then sea seven matter tag quiz arena place endorse swear",
+      "popular icon scissors pole ill sport fatal bacon exhaust panda garment grass",
+      "orchard draft cake urge shock distance shadow sand simple attitude jelly sadness",
+      "simple ripple wine debate ten brisk pear own prize upset stereo victory",
+      "lab post subway skirt lyrics shoot sorry radar crucial ball achieve grid",
+      "toward bulb pyramid fury exercise decorate extend talent file venture rather special",
+      "friend promote seek crawl immune coach wolf rough shoot virus increase rookie",
+      "sleep update soldier mobile museum grocery upon say pave plunge toss left",
+      "joke siege fashion cost ridge price toddler bone coin awake dress ginger",
+      "picnic melody door swarm quarter pride call approve admit satisfy assault obscure",
+      "opera what van goat already mad sand marriage foot cart cage second",
+      "craft scrap wine gossip case invest canal major syrup print flame venture",
+      "quote fade milk off only give gallery trust inhale analyst announce mule",
+      "despair shift six urge twelve survey focus expose tennis avocado collect suggest",
+      "tonight soap people thing anchor inhale want giant radio glory summer busy",
+      "hover jar blue solid explain spare science universe gospel man balcony orient",
+      "idea unveil dash erode scare cereal tomorrow tackle rival mansion inject bridge",
+      "fox pigeon ill hover century artwork honey unusual reopen wage purse hen",
+      "wing draw meadow health fine bench cliff account remember transfer act civil",
+      "mountain rail doctor crane kingdom skill zero unveil universe service famous mammal",
+      "paddle deer air gain stool office hub eyebrow youth illegal burst artwork",
+      "guide wheel option ring wolf elegant leave crater half opera brother shock",
+      "radar loud delay install benefit dad square kind bar fiber endorse expose",
+      "have wealth pole name hill gate intact tongue party praise guard nasty",
+      "top police deal panda lazy stomach patient hunt level market design antique",
+      "exercise midnight night fish trash notable danger system enlist cloth region depart",
+      "nerve tiger grain slab deliver recycle deer mushroom tongue spare two size",
+      "staff dress burst rail tortoise honey owner speed enter enjoy inject desk",
+      "shoe door panel sustain motor robot nuclear expire early melt wagon stone",
+      "grid stem faith device wheel breeze leg flock hope sunny scare harvest",
+      "damp oppose reflect sun master bubble purpose quote spice wash unfold stumble",
+      "poverty web relax cute myself advance young song ability tower caution arch",
+      "glass purse early group sibling sphere wrestle bench crane grow artist sad",
+      "snap crazy episode earth derive width inmate have require rude office limit",
+      "plug turtle victory exist okay often ritual tank great canyon silver equal",
+      "dad always slight film render bundle room input bulb rabbit write joy",
+      "teach walnut raise bird senior case special still lyrics bonus avoid solve",
+      "join turkey toe coffee leopard brick rain arctic siege walk meat divert"
+    ],
+    "access": {
+      "whiteList": [
+        "127.0.0.1"
+      ]
+    }
+  },
+  "loading": {
+    "verifyOnLoading": false,
+    "loadPerIteration": 5000
+  },
+  "ssl": {
+    "enabled": false,
+    "options": {
+      "port": 443,
+      "address": "0.0.0.0",
+      "key": "./ssl/ark.key",
+      "cert": "./ssl/ark.crt"
+    }
+  },
+  "network": "testnet",
+  "nethash": "9d39602ff3d69780da2c9f5ed5e24451409f6511e226bd540dd84a375508ce5b"
+}
