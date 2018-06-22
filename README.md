@@ -1,56 +1,21 @@
-SWAPBlocks is a decentralized asset management ecosystem with decentralized exchange capabilities built on ARK.
-This initial alpha release is a clone of ARK and will be used for community building and fundraising the development
-of SWAPBlocks beta. All transactions on alphnet will carry over to swapblocks beta.
+SWAPBlocks alpha mainnet node.  To learn more about swapblocks visit http://swapblocks.io
 
 
 This version is still alpha, use at your own risks
 
-## Install, Upgrade etc...
-You need to provision a linux (ubuntu tested) server (digital ocean, vultur or other).
-
-Then use the excellent ark-commander script
-```
-cd
-wget https://ark.io/ARKcommander.sh
-bash ARKcommander.sh
-```
-
-For developers, please read the "Developer Installation" section below.  
-
-or Alternatively run
-```
-cd
-wget https://ark.io/DARKcommander.sh
-bash DARKcommander.sh
-```
 
 ## Details
 
-This is a fork from Lisk with the following features:
-- Removed sidechains (deprecated in favor of smartbridge)
-- Removed custom node version
-- Removed UI for stability and security reasons
-- Changed some constants (block rewards, blocktime etc...)
-- Added simple PBFT before forging new block
-- Ditch addresses from the protocol in favor of bitcoin like system, enabling HD Wallet as for BIP32
-- Completely rewritten node management using a single NodeManager and messaging system
-- Completely rewritten round management (removed mem_round, reward block fees to forger)
-- Added 64 bytes vendorField as first iteration of smart bridge
-- Made peers management entirely in-memory for efficiency
-- Strengthened the transaction management and broadcast (reject often, reject soon)
-- Rearchitect with relay nodes and forging nodes
-- Nodes broadcast only block headers.
+This version of swapblocks is a clone of ARK.  Future architecture and vision can be 
+found by reading our [white paper](https://view.publitas.com/swapblocks/swapblocks_wp/page/1)
+
+
 
 ### Planned features:
-- Simple blockchain validation for SPV and use in lite clients
-- Add IPFS as first class citizen (using smartbridge addressing)
-- Protocol improvements (uncle forging, voting weights).
-- Remove unsecured API
-- Routing tables
-
-### Performance
-- stable on testnet at 5tx/s
-- pushed to 10tx/s on devnet
+- Asset issuance
+- Permissioned Smart Contracts 
+- Decentralized Exchange
+- Consortium Governance 
 
 
 ## Developer Installation
@@ -94,7 +59,7 @@ sudo apt-get install -y curl build-essential python git
 Install PostgreSQL (min version: 9.5.2)
 
 ```
-sudo apt-get install -y postgresql postgresql-contrib
+sudo apt-get install -y postgresql postgresql-contrib libpq-dev
 sudo -u postgres createuser --createdb --password $USER
 createdb ark_test
 ```
@@ -102,7 +67,7 @@ createdb ark_test
 Install Node.js (tested with version 6.9.2, but any recent LTS release should do):
 
 ```
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs npm
 sudo npm install -g n
 sudo n 6.9.2
 ```
@@ -115,8 +80,8 @@ sudo npm install grunt-cli -g
 
 Clone this repository
 ```
-git clone https://github.com/arkecosystem/ark-node.git
-cd ark-node
+git clone https://github.com/SwapBlocks/swapblocks-node.git 
+cd swapblocks-node
 ```
 
 Install node modules:
@@ -126,21 +91,15 @@ npm install
 ```
 
 ## Launch
-To launch Ark on testnet:
+To launch swapblocks on testnet:
 ```
-createdb ark_testnet
+createdb test_swapblocks 
 npm run start:testnet
 ```
 
-To launch Ark on devtnet:
+To launch swapblocks on mainnet (when launched):
 ```
-createdb ark_devnet
-npm run start:devnet
-```
-
-To launch Ark on mainnet (when launched):
-```
-createdb ark_mainnet
+createdb swapblocks 
 npm run start:mainnet
 ```
 
@@ -157,29 +116,8 @@ Generate a genesisBlock.json + a default config.json containing all passphrases 
 node tasks/createGenesisBlock.js
 ```
 
-Be sure to configure this file for your needs
-
-- a genesisBlock.json containing the genesis block
-- a config.json containing configuration to start relay nodes
-- an autoforging config.json containing configuration to start all delegates on a single node (for testing purpose)
-- a bunch of config files to distribute to different configured delegate nodes starting the network.
-- a delegatesPassphrases.json containing details about the genesis delegates
-- a genesisPassphrase.json containing the details of delegates that will launch your network
-
-
-Obviously you can hack away tasks/createGenesisBlock.js for your own custom use.
-
-You can the start with your own chain on a single node (all delegates will forge on your single node) using:
-```
-createdb ark_newtest
-npm run start:newtest
-```
-
-Then you can distribute the config.json (without the delegates secrets inside, and with custom peers settings) to peers to let them join your chain
-
-
 ## Tests
-Load git submodule [ark-js](https://github.com/arkecosystem/ark-js):
+Load git submodule [ark-js](https://github.com/SwapBlocks/ark-js):
 ```
 git submodule init
 git submodule update
