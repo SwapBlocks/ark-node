@@ -61,7 +61,6 @@ Install PostgreSQL (min version: 9.5.2)
 ```
 sudo apt-get install -y postgresql postgresql-contrib libpq-dev
 sudo -u postgres createuser --createdb --password $USER
-createdb test_swapblocks 
 ```
 
 Install Node.js (tested with version 6.9.2, but any recent LTS release should do):
