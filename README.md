@@ -30,7 +30,7 @@ To start the Vagrant environment:
 vagrant up
 ```
 
-All dependency installation and configuration for the dev environment is in the `VagrantFile`. After installation, ark-node will automatically start and log all output to the console.
+All dependency installation and configuration for the dev environment is in the `VagrantFile`. After installation, swapblocks-node will automatically start and log all output to the console.
 
 To log into the Vagrant environment:
 
@@ -61,7 +61,6 @@ Install PostgreSQL (min version: 9.5.2)
 ```
 sudo apt-get install -y postgresql postgresql-contrib libpq-dev
 sudo -u postgres createuser --createdb --password $USER
-createdb ark_test
 ```
 
 Install Node.js (tested with version 6.9.2, but any recent LTS release should do):
@@ -75,6 +74,7 @@ sudo n 6.9.2
 Install grunt-cli (globally):
 
 ```
+sudo npm install forever -g
 sudo npm install grunt-cli -g
 ```
 
