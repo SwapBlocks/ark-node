@@ -10,7 +10,7 @@
     "client": {
       "token": "SBX",
       "symbol": "SBX",
-      "explorer": "http://localhost:4200"
+      "explorer": "https://explorer.swapblocks.io"
     }
   },
     "testnet": {
@@ -24,7 +24,7 @@
     "client": {
       "token":"TSBX",
       "symbol":"TSBX",
-      "explorer":"http://localhost:4200"
+      "explorer":"https://texplorer.swapblocks.io"
     }
   
   }
