@@ -37,8 +37,8 @@ module.exports = {
 			200000000, // Milestone 3
 			200000000  // Milestone 4
 		],
-		offset: 10800,   // Start rewards at block, ie 7 days after net start
-		distance: 3000000, // Distance between each milestone
+		offset: 75600,   // Start rewards at block, ie 7 days after net start
+		distance: 1500000, // Distance between each milestone
 	},
 	signatureLength: 196,
 	totalAmount: 1e16,
