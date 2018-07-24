@@ -20,3 +20,4 @@ package-lock.json
 /tasks/demo/*
 config.delegate.json
 config.delegate.testnet.json
+config.mainnet.autoforging.json
