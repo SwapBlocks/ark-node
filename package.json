@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "start:testnet": "forever start app.js --genesis genesisBlock.testnet.json --config config.testnet.json",
-    "start:alphanet": "forever start app.js --genesis genesisBlock.json --config config.json -i",
+    "start:mainnet": "forever start app.js --genesis genesisBlock.json --config config.json -i",
     "start:test": "node app.js --genesis test/genesisBlock.json --config test/config.json",
     "test": "./node_modules/.bin/mocha",
     "cov": "./node_modules/.bin/mocha --require blanket -R html-cov test/helpers test/logic > tmp/coverage.html"

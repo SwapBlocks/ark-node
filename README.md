@@ -1,4 +1,4 @@
-SWAPBlocks alphanet node.  To learn more about swapblocks visit http://swapblocks.io
+SWAPBlocks mainnet node.  To learn more about swapblocks visit http://swapblocks.io
 
 
 This version is still alpha, use at your own risks
@@ -72,7 +72,7 @@ npm run start:testnet
 To launch swapblocks on alphanet (when launched):
 ```
 createdb swapblocks 
-npm run start:alphanet
+npm run start:mainnet
 ```
 
 **NOTE:** The **port**, **address**, **genesis block** and **config-path** can be overridden by providing the relevant command switch:
