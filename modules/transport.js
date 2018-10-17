@@ -18,7 +18,7 @@ var modules, library, self, __private = {}, shared = {};
 
 __private.headers = {};
 __private.messages = {};
-__private.broadcastTransactions = [];
+__private.broadcastTransactions = {};
 
 // Constructor
 function Transport (cb, scope) {
@@ -27,9 +27,13 @@ function Transport (cb, scope) {
 
 	setInterval(function(){
 		var maxspliced = 10;
-		if(maxspliced > __private.broadcastTransactions.length) maxspliced = __private.broadcastTransactions.length;
+		if(maxspliced > Object.keys(__private.broadcastTransactions).length) maxspliced = Object.keys(__private.broadcastTransactions).length;
 		if(maxspliced > 0){
-			var transactions = __private.broadcastTransactions.splice(0, maxspliced);
+			var transactions = Object.keys(__private.broadcastTransactions).splice(0, maxspliced).map(tx => {
+				var thistx = __private.broadcastTransactions[tx];
+				delete __private.broadcastTransactions[tx];
+				return thistx;
+			});
 			self.broadcast({limit: 20}, {api: '/transactions', data: {transactions: transactions}, method: 'POST'});
 		}
 	}, 3000);
@@ -75,8 +79,12 @@ __private.attachApi = function () {
 
 			req.peer.os = headers.os;
 			req.peer.version = headers.version;
-
-			modules.peers.accept(req.peer);
+			
+			if (req.peer.version >= library.config.minimumVersion) {
+                modules.peers.accept(req.peer);
+            } else {
+                library.logger.debug("Peer version below minimum - " + req.peer.ip + ": " + req.peer.version);
+            }
 
 			return next();
 		});
@@ -191,8 +199,12 @@ __private.attachApi = function () {
 
 			return res.status(200).json({success: false, error: e.toString()});
 		}
-
-		modules.peers.accept(req.peer);
+		
+		if (req.peer.version >= library.config.minimumVersion) {
+			modules.peers.accept(req.peer);
+		} else {
+			library.logger.debug("Peer version below minimum - " + req.peer.ip + ": " + req.peer.version);
+		}
 
 
 		library.bus.message('blockReceived', block, req.peer, function(error, data){
@@ -437,7 +449,11 @@ Transport.prototype.requestFromRandomPeer = function (config, options, cb) {
 //
 Transport.prototype.requestFromPeer = function (peer, options, cb) {
 	var url;
-	peer = modules.peers.accept(peer);
+	if (peer.version >= library.config.minimumVersion) {
+		peer = modules.peers.accept(peer);
+	} else {
+		peer = modules.peers.accept(peer, true);
+	}
 	library.logger.trace("requestFromPeer", peer.toObject());
 
 	if (options.api) {
@@ -507,7 +523,7 @@ Transport.prototype.onBroadcastTransaction = function (transaction) {
 	delete transaction.verified;
 	delete transaction.processed;
 
-	__private.broadcastTransactions.push(transaction);
+	__private.broadcastTransactions[transaction.id] = transaction;
 };
 
 //
